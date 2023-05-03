@@ -16,10 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="393" placeholderIntrinsicHeight="852" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-CO-qXK">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIj-CO-qXK">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="Gff-R2-NyU"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="U6z-nz-Pfw"/>
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yJU-f4-DNY"/>
