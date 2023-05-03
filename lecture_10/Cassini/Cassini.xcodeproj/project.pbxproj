@@ -15,6 +15,7 @@
 		5E1EA9232A023DF300B98964 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA9222A023DF300B98964 /* ImageViewController.swift */; };
 		5E1EA9252A0245FD00B98964 /* DemoURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA9242A0245FD00B98964 /* DemoURLs.swift */; };
 		5E1EA9292A027FED00B98964 /* oval.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5E1EA9282A027FED00B98964 /* oval.jpg */; };
+		5E1EA92B2A02810700B98964 /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA92A2A02810700B98964 /* CassiniViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5E1EA9222A023DF300B98964 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		5E1EA9242A0245FD00B98964 /* DemoURLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoURLs.swift; sourceTree = "<group>"; };
 		5E1EA9282A027FED00B98964 /* oval.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = oval.jpg; path = ../../../assets/oval.jpg; sourceTree = "<group>"; };
+		5E1EA92A2A02810700B98964 /* CassiniViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CassiniViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				5E1EA9212A023D5C00B98964 /* Supporting Files */,
 				5E1EA90F2A023D4200B98964 /* SceneDelegate.swift */,
 				5E1EA9132A023D4200B98964 /* Main.storyboard */,
+				5E1EA92A2A02810700B98964 /* CassiniViewController.swift */,
 				5E1EA9242A0245FD00B98964 /* DemoURLs.swift */,
 				5E1EA9222A023DF300B98964 /* ImageViewController.swift */,
 				5E1EA9282A027FED00B98964 /* oval.jpg */,
@@ -156,6 +159,7 @@
 				5E1EA90E2A023D4200B98964 /* AppDelegate.swift in Sources */,
 				5E1EA9252A0245FD00B98964 /* DemoURLs.swift in Sources */,
 				5E1EA9232A023DF300B98964 /* ImageViewController.swift in Sources */,
+				5E1EA92B2A02810700B98964 /* CassiniViewController.swift in Sources */,
 				5E1EA9102A023D4200B98964 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
