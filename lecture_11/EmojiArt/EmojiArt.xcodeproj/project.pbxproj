@@ -15,6 +15,7 @@
 		5E82D8922A06752C00FB1740 /* EmojiArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E82D8912A06752C00FB1740 /* EmojiArtViewController.swift */; };
 		5E82D8962A0675AE00FB1740 /* EmojiArtView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E82D8952A0675AE00FB1740 /* EmojiArtView.swift */; };
 		5E82D8982A067C7000FB1740 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E82D8972A067C7000FB1740 /* Utilities.swift */; };
+		5E82D89A2A06903000FB1740 /* EmojiArtDocumentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E82D8992A06903000FB1740 /* EmojiArtDocumentTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5E82D8912A06752C00FB1740 /* EmojiArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtViewController.swift; sourceTree = "<group>"; };
 		5E82D8952A0675AE00FB1740 /* EmojiArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtView.swift; sourceTree = "<group>"; };
 		5E82D8972A067C7000FB1740 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		5E82D8992A06903000FB1740 /* EmojiArtDocumentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocumentTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,11 +63,12 @@
 			isa = PBXGroup;
 			children = (
 				5E82D8902A0673B300FB1740 /* Supporting Files */,
-				5E82D87E2A0673A700FB1740 /* SceneDelegate.swift */,
-				5E82D8822A0673A700FB1740 /* Main.storyboard */,
+				5E82D8992A06903000FB1740 /* EmojiArtDocumentTableViewController.swift */,
 				5E82D8952A0675AE00FB1740 /* EmojiArtView.swift */,
 				5E82D8912A06752C00FB1740 /* EmojiArtViewController.swift */,
+				5E82D87E2A0673A700FB1740 /* SceneDelegate.swift */,
 				5E82D8972A067C7000FB1740 /* Utilities.swift */,
+				5E82D8822A0673A700FB1740 /* Main.storyboard */,
 				5E82D88A2A0673A800FB1740 /* Info.plist */,
 			);
 			path = EmojiArt;
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E82D87D2A0673A700FB1740 /* AppDelegate.swift in Sources */,
+				5E82D89A2A06903000FB1740 /* EmojiArtDocumentTableViewController.swift in Sources */,
 				5E82D8922A06752C00FB1740 /* EmojiArtViewController.swift in Sources */,
 				5E82D87F2A0673A700FB1740 /* SceneDelegate.swift in Sources */,
 				5E82D8982A067C7000FB1740 /* Utilities.swift in Sources */,
