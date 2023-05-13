@@ -101,8 +101,8 @@
             <objects>
                 <splitViewController primaryBackgroundStyle="sidebar" id="xiu-CO-2Dv" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="showDetail" id="v0x-LF-fi6"/>
                         <segue destination="tGu-dw-DKy" kind="relationship" relationship="masterViewController" id="MEX-P7-269"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="4eZ-tb-hKe"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dd1-at-v5a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
