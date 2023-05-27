@@ -77,7 +77,12 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
     
     @IBAction func close(_ sender: UIBarButtonItem) {
         save()
-        document?.close()
+        if document?.emojiArt != nil {
+            document?.thumbnail = emojiArtView.snapshot
+        }
+        dismiss(animated: true) {
+            self.document?.close()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -87,18 +92,6 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
                 self.title = self.document?.localizedName
                 self.emojiArt = self.document?.emojiArt
             }
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let url = try? FileManager.default.url(
-            for: .documentDirectory,
-            in: .userDomainMask,
-            appropriateFor: nil,
-            create: true
-        ).appendingPathComponent("Untitled.json") {
-            document = EmojiArtDocument(fileURL: url)
         }
     }
 
@@ -164,6 +157,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
             emojiCollectionView.delegate = self
             emojiCollectionView.dragDelegate = self
             emojiCollectionView.dropDelegate = self
+            emojiCollectionView.dragInteractionEnabled = true
         }
     }
     
