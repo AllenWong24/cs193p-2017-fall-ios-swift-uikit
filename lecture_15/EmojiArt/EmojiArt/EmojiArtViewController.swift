@@ -66,7 +66,22 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         }
     }
     
+    // MARK: - Document Handling
+    
     var document: EmojiArtDocument?
+    
+    func documentChanged() {
+        // NO CHANGES *INSIDE* THIS METHOD WERE MADE AFTER LECTURE 14
+        // JUST ITS NAME WAS CHANGED (FROM save TO documentChanged)
+        
+        // update the document's Model to match ours
+        document?.emojiArt = emojiArt
+        // then tell the document that something has changed
+        // so it will autosave at next best opportunity
+        if document?.emojiArt != nil {
+            document?.updateChangeCount(.done)
+        }
+    }
 
     @IBAction func save(_ sender: UIBarButtonItem? = nil) {
         document?.emojiArt = emojiArt
@@ -309,6 +324,33 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
     
     var imageFetcher: ImageFetcher!
     
+    private var suppressBadURLWarnings = false
+    
+    private func presentBadURLWarning(for url: URL?) {
+        if !suppressBadURLWarnings {        
+            let alert = UIAlertController(
+                title: "Image Transfer Failed",
+                message: "Couldn't transfer the dropped image from its source.\nShow this warning in the future?",
+                preferredStyle: .alert
+            )
+            
+            alert.addAction(UIAlertAction(
+                title: "Keep Warning",
+                style: .default
+            ))
+            
+            alert.addAction(UIAlertAction(
+                title: "Stop Warning",
+                style: .destructive,
+                handler: { action in
+                    self.suppressBadURLWarnings = true
+                }
+            ))
+            
+            present(alert, animated: true)
+        }
+    }
+    
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         imageFetcher = ImageFetcher() { (url, image) in
             DispatchQueue.main.async {
@@ -323,10 +365,12 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
                     if let imageData = try? Data(contentsOf: url.imageURL), let image = UIImage(data: imageData) {
                         DispatchQueue.main.async {
                             self.emojiArtBackgroundImage = (url, image)
-                            self.documentChange()
+                            self.documentChanged()
                         }
                     } else {
-                        self.presentBadURLWarning(for: url)
+                        DispatchQueue.main.async {
+                            self.presentBadURLWarning(for: url)
+                        }
                     }
                 }
             }
