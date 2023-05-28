@@ -173,11 +173,6 @@
                                 <action selector="close:" destination="rtC-Rp-v1T" id="OCH-5O-JXr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="prW-Dy-edR">
-                            <connections>
-                                <action selector="save:" destination="rtC-Rp-v1T" id="BCH-64-yD1"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>

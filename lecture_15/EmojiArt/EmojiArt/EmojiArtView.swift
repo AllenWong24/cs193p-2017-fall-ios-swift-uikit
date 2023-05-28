@@ -27,6 +27,14 @@ protocol EmojiArtViewDelegate: AnyObject {
     func emojiArtViewDidChange(_ sender: EmojiArtView)
 }
 
+// EmojiArtView also notifies of changes using NotificationCenter
+// (i.e. it broadcasts on the EmojiArtViewDidChange "radio station" when changes occur)
+// here we are definining the name of the radio station
+
+extension Notification.Name {
+    static let EmojiArtViewDidChange = Notification.Name("EmojiArtViewDidChange")
+}
+
 class EmojiArtView: UIView, UIDropInteractionDelegate {
     
     // MARK: - Delegation
@@ -71,9 +79,13 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
             let dropPoint = session.location(in: self)
             for attributedString in providers as? [NSAttributedString] ?? [] {
                 self.addLabel(with: attributedString, centeredAt: dropPoint)
+                self.delegate?.emojiArtViewDidChange(self)
+                NotificationCenter.default.post(name: .EmojiArtViewDidChange, object: self)
             }
         }
     }
+    
+    private var labelObservations = [UIView:NSKeyValueObservation]()
     
     func addLabel(with attributedString: NSAttributedString, centeredAt point: CGPoint) {
         let label = UILabel()
@@ -83,7 +95,27 @@ class EmojiArtView: UIView, UIDropInteractionDelegate {
         label.center = point
         addEmojiArtGestureRecognizers(to: label)
         addSubview(label)
+        labelObservations[label] = label.observe(\.center) { (label, change) in
+            self.delegate?.emojiArtViewDidChange(self)
+            NotificationCenter.default.post(name: .EmojiArtViewDidChange, object: self)
+        }
     }
+    
+    // normally observing center stops when we leave the heap
+    // because that causes the labelObservations dictionary
+    // to leave the heap with us
+    // but just in case an emoji label is ever removed from us
+    // (currently we provide no UI for removing emoji, but someday?)
+    // we make sure to stop observing such an emoji label
+    
+    override func willRemoveSubview(_ subview: UIView) {
+        super.willRemoveSubview(subview)
+        if labelObservations[subview] != nil {
+            labelObservations[subview] = nil
+        }
+    }
+    
+    // MARK: - Drawing the Background
     
     var backgroundImage: UIImage? { didSet { setNeedsDisplay() } }
     
