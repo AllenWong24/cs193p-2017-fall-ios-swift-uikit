@@ -34,6 +34,17 @@ extension EmojiArt.EmojiInfo
 
 class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScrollViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDragDelegate, UICollectionViewDropDelegate {
     
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Show Document Info" {
+            if let destination = segue.destination.contents as? DocumentInfoViewController {
+                document?.thumbnail = emojiArtView.snapshot
+                destination.document = document
+            }
+        }
+    }
+    
     // MARK: - model
     
     // computed property for our Model
@@ -91,7 +102,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         if document?.emojiArt != nil {
             document?.thumbnail = emojiArtView.snapshot
         }
-        dismiss(animated: true) {
+        presentingViewController?.dismiss(animated: true) {
             self.document?.close { success in
                 if let observer = self.documentObserver {
                     NotificationCenter.default.removeObserver(observer)
@@ -381,7 +392,7 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
 
         session.loadObjects(ofClass: NSURL.self) { nsurls in
             if let url = nsurls.first as? URL {
-//                self.imageFetcher.fetch(url)
+                self.imageFetcher.fetch(url)
                 DispatchQueue.global(qos: .userInitiated).async {
                     if let imageData = try? Data(contentsOf: url.imageURL), let image = UIImage(data: imageData) {
                         DispatchQueue.main.async {

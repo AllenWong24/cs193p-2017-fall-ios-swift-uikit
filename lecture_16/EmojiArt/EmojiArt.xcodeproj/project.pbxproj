@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E681FB82A627B060069AD48 /* DocumentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E681FB72A627B060069AD48 /* DocumentInfoViewController.swift */; };
 		5EBB4ADE2A221212009C800F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB4ADD2A221212009C800F /* AppDelegate.swift */; };
 		5EBB4AE02A221212009C800F /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB4ADF2A221212009C800F /* DocumentBrowserViewController.swift */; };
 		5EBB4AE42A221212009C800F /* EmojiArtDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB4AE32A221212009C800F /* EmojiArtDocument.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E681FB72A627B060069AD48 /* DocumentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentInfoViewController.swift; sourceTree = "<group>"; };
 		5EBB4ADA2A221212009C800F /* EmojiArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBB4ADD2A221212009C800F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EBB4ADF2A221212009C800F /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				5EBB4AF42A22149E009C800F /* Utilities.swift */,
 				5EBB4AE32A221212009C800F /* EmojiArtDocument.swift */,
 				5EBB4AE52A221212009C800F /* Main.storyboard */,
+				5E681FB72A627B060069AD48 /* DocumentInfoViewController.swift */,
 				5EBB4AED2A221212009C800F /* Info.plist */,
 			);
 			path = EmojiArt;
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E681FB82A627B060069AD48 /* DocumentInfoViewController.swift in Sources */,
 				5EBB4AFE2A22149E009C800F /* EmojiCollectionViewCell.swift in Sources */,
 				5EBB4B012A22149E009C800F /* EmojiArtView.swift in Sources */,
 				5EBB4B002A22149E009C800F /* EmojiArtViewController.swift in Sources */,
