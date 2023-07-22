@@ -271,12 +271,13 @@
                     <connections>
                         <outlet property="createdLabel" destination="pb4-cW-jGG" id="F9P-39-OLb"/>
                         <outlet property="sizeLabel" destination="nDt-KK-ASd" id="kYg-Eg-0iV"/>
+                        <outlet property="thumbnailAspectRatio" destination="r4t-Mv-YDc" id="TaT-CX-aiR"/>
                         <outlet property="thumbnailImageView" destination="XrU-mP-RcM" id="SnF-cO-7tD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRQ-Wq-suf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1253" y="1105"/>
+            <point key="canvasLocation" x="1275" y="1105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qrj-et-78K">

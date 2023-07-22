@@ -34,14 +34,26 @@ class DocumentInfoViewController: UIViewController {
                 createdLabel.text = shortDateFormatter.string(from: created)
             }
         }
-        if thumbnailImageView != nil, let thumbnail = document?.thumbnail {
+        if thumbnailImageView != nil, thumbnailAspectRatio != nil, let thumbnail = document?.thumbnail {
             thumbnailImageView.image = thumbnail
+            thumbnailImageView.removeConstraint(thumbnailAspectRatio)
+            thumbnailAspectRatio = NSLayoutConstraint(
+                item: thumbnailImageView,
+                attribute: .width,
+                relatedBy: .equal,
+                toItem: thumbnailImageView,
+                attribute: .height,
+                multiplier: thumbnail.size.width / thumbnail.size.height,
+                constant: 0
+            )
+            thumbnailImageView.addConstraint(thumbnailAspectRatio)
         }
     }
     
     @IBAction func done() {
         presentingViewController?.dismiss(animated: true)
     }
+    @IBOutlet weak var thumbnailAspectRatio: NSLayoutConstraint!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var createdLabel: UILabel!
