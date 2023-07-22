@@ -45,8 +45,12 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
                     ppc.delegate = self
                 }
             }
+        } else if segue.identifier == "Embed Document Info" {
+            embeddedDocInfo = segue.destination.contents as? DocumentInfoViewController
         }
     }
+    
+    private var embeddedDocInfo: DocumentInfoViewController?
     
     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
         return .none
@@ -56,6 +60,8 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
         close()
     }
     
+    @IBOutlet weak var embeddedDocInfoWidth: NSLayoutConstraint!
+    @IBOutlet weak var embeddedDocInfoHeight: NSLayoutConstraint!
     // MARK: - model
     
     // computed property for our Model
@@ -133,6 +139,11 @@ class EmojiArtViewController: UIViewController, UIDropInteractionDelegate, UIScr
             queue: OperationQueue.main,
             using: { notification in
                 print("documentState changed to \(self.document!.documentState)")
+                if self.document!.documentState == .normal, let docInfoVC = self.embeddedDocInfo {
+                    docInfoVC.document = self.document
+                    self.embeddedDocInfoWidth.constant = docInfoVC.preferredContentSize.width + 30
+                    self.embeddedDocInfoHeight.constant = docInfoVC.preferredContentSize.height + 30
+                }
             }
         )
         document?.open { success in
