@@ -174,11 +174,20 @@
                                 <action selector="close:" destination="rtC-Rp-v1T" id="OCH-5O-JXr"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Inspect" id="Lzh-yq-9TK">
-                            <connections>
-                                <segue destination="f47-94-9Ft" kind="presentation" identifier="Show Document Info" id="bUU-qA-Qrl"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Pop" id="ucX-UC-0re">
+                                <connections>
+                                    <segue destination="f47-94-9Ft" kind="popoverPresentation" identifier="Show Document Info" popoverAnchorBarButtonItem="ucX-UC-0re" id="2rP-bV-1Ye">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Inspect" id="Lzh-yq-9TK">
+                                <connections>
+                                    <segue destination="f47-94-9Ft" kind="presentation" identifier="Show Document Info" id="bUU-qA-Qrl"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
@@ -198,11 +207,11 @@
             <objects>
                 <viewController id="f47-94-9Ft" customClass="DocumentInfoViewController" customModule="EmojiArt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vxA-PU-EIc">
-                        <rect key="frame" x="0.0" y="0.0" width="704" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="680"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Wdj-pS-hJj">
-                                <rect key="frame" x="232" y="238.5" width="240" height="227.5"/>
+                                <rect key="frame" x="67.5" y="226.5" width="240" height="227.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-mP-RcM">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -270,9 +279,11 @@
                     </view>
                     <connections>
                         <outlet property="createdLabel" destination="pb4-cW-jGG" id="F9P-39-OLb"/>
+                        <outlet property="returnToDocumentButton" destination="Q4B-YZ-wdx" id="QLQ-jw-ZRM"/>
                         <outlet property="sizeLabel" destination="nDt-KK-ASd" id="kYg-Eg-0iV"/>
                         <outlet property="thumbnailAspectRatio" destination="r4t-Mv-YDc" id="TaT-CX-aiR"/>
                         <outlet property="thumbnailImageView" destination="XrU-mP-RcM" id="SnF-cO-7tD"/>
+                        <outlet property="topLevalView" destination="Wdj-pS-hJj" id="sFT-Hy-dhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pRQ-Wq-suf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -298,6 +309,9 @@
             <point key="canvasLocation" x="-120.4766107678729" y="1104.8387096774193"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2rP-bV-1Ye"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
