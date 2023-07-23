@@ -156,7 +156,7 @@
                                 </cells>
                             </collectionView>
                             <containerView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="Urx-hi-N7s">
-                                <rect key="frame" x="273" y="332" width="264" height="80"/>
+                                <rect key="frame" x="272" y="332" width="264" height="79"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Nsq-7d-IxA" kind="embed" identifier="Embed Document Info" id="9u6-tk-i7R"/>
@@ -194,10 +194,16 @@
                                     <segue destination="f47-94-9Ft" kind="presentation" identifier="Show Document Info" id="bUU-qA-Qrl"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem systemItem="camera" id="FQI-AN-3Ap">
+                                <connections>
+                                    <action selector="takeBackgroundPhoto:" destination="rtC-Rp-v1T" id="IzZ-LT-CwK"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="cameraButton" destination="FQI-AN-3Ap" id="5bR-KV-zTH"/>
                         <outlet property="dropZone" destination="Edy-ct-kD9" id="wVi-hR-wyo"/>
                         <outlet property="emojiCollectionView" destination="uuX-i2-s7t" id="S7Q-bj-vvH"/>
                         <outlet property="scrollView" destination="i5f-S8-udl" id="SUq-0N-UIy"/>
@@ -332,11 +338,11 @@
             <objects>
                 <viewController id="Nsq-7d-IxA" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tqi-zq-u98">
-                        <rect key="frame" x="0.0" y="0.0" width="264" height="80"/>
+                        <rect key="frame" x="0.0" y="0.0" width="264" height="79"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5tp-IS-IRh">
-                                <rect key="frame" x="29.5" y="15.5" width="205" height="49"/>
+                                <rect key="frame" x="29.5" y="15" width="205" height="49"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EyT-dJ-2rW">
                                         <rect key="frame" x="0.0" y="0.0" width="65.5" height="49"/>
