@@ -17,6 +17,7 @@
 		5E1EA8D32A00DB4D00B98964 /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA8D02A00DB4D00B98964 /* PlayingCardView.swift */; };
 		5E1EA8D42A00DB4D00B98964 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA8D12A00DB4D00B98964 /* PlayingCard.swift */; };
 		5E1EA8D62A01152800B98964 /* CardBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA8D52A01152800B98964 /* CardBehavior.swift */; };
+		5E730D7A2A6D0F0100C7A530 /* CMMotionManger+shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E730D792A6D0F0100C7A530 /* CMMotionManger+shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5E1EA8D02A00DB4D00B98964 /* PlayingCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		5E1EA8D12A00DB4D00B98964 /* PlayingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		5E1EA8D52A01152800B98964 /* CardBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBehavior.swift; sourceTree = "<group>"; };
+		5E730D792A6D0F0100C7A530 /* CMMotionManger+shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMMotionManger+shared.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				5E1EA8BB2A00DABC00B98964 /* AppDelegate.swift */,
 				5E1EA8BD2A00DABC00B98964 /* SceneDelegate.swift */,
 				5E1EA8BF2A00DABC00B98964 /* ViewController.swift */,
+				5E730D792A6D0F0100C7A530 /* CMMotionManger+shared.swift */,
 				5E1EA8D52A01152800B98964 /* CardBehavior.swift */,
 				5E1EA8D12A00DB4D00B98964 /* PlayingCard.swift */,
 				5E1EA8CF2A00DB4D00B98964 /* PlayingCardDeck.swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E730D7A2A6D0F0100C7A530 /* CMMotionManger+shared.swift in Sources */,
 				5E1EA8C02A00DABC00B98964 /* ViewController.swift in Sources */,
 				5E1EA8D22A00DB4D00B98964 /* PlayingCardDeck.swift in Sources */,
 				5E1EA8BC2A00DABC00B98964 /* AppDelegate.swift in Sources */,

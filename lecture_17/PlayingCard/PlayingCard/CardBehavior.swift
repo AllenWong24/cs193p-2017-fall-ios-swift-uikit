@@ -46,7 +46,11 @@ class CardBehavior: UIDynamicBehavior {
         addChildBehavior(push)
     }
     
-    
+    var gravityBehavior: UIGravityBehavior = {
+        let behavior = UIGravityBehavior()
+        behavior.magnitude = 0
+        return behavior
+    }()
     
     func addItem(_ item: UIDynamicItem) {
         collisionBehavior.addItem(item)
